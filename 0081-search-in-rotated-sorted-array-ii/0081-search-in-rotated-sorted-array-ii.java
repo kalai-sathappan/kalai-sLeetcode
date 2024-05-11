@@ -1,11 +1,10 @@
 class Solution {
     public boolean search(int[] nums, int target) {
-        List<Integer> l = new ArrayList<>(); 
-
-        for(int i:nums){ 
-            l.add(i);
+        Arrays.sort(nums); 
+        int a = Arrays.binarySearch(nums,target); 
+        if(a>=0){ 
+            return true;
         } 
-
-        return l.contains(target);
+        return false;
     }
 }
