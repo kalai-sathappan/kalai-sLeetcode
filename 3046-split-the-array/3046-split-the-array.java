@@ -1,6 +1,6 @@
 class Solution {
     public boolean isPossibleToSplit(int[] nums) {
-        Arrays.sort(nums); 
+        
 
         int a[] = new int [nums.length/2]; 
         int b[] = new int [nums.length/2]; 
