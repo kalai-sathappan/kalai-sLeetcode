@@ -4,11 +4,12 @@ class Solution {
             return start;
         } 
 
+        int min = Integer.MAX_VALUE;
         for(int i=0;i<nums.length;i++){ 
             if(nums[i]==target){ 
-                return Math.abs(start-i);
+                min = Math.min(min,Math.abs(start-i));
             }
         } 
-        return -1;
+        return min;
     }
 }
