@@ -1,5 +1,6 @@
 class Solution {
-    public int[][] matrixReshape(int[][] mat, int r, int c) {
+    public int[][] matrixReshape(int[][] mat, int r, int c) { 
+        
         List<Integer> l = new ArrayList<>(); 
         for(int i = 0;i<mat.length;i++){ 
             for(int j=0;j<mat[0].length;j++){ 
@@ -17,7 +18,10 @@ class Solution {
                 a[i][j] = l.get(k); 
                 k++;
             }
-        } 
+        }  
+        if(k<l.size()){
+            return mat;
+        }
         return a;
     }
 }
