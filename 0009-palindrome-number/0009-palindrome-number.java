@@ -7,12 +7,9 @@ class Solution {
         return check(s1,0,s1.length()-1,1);
     } 
     static boolean check(String str,int s,int e,int flag){ 
-        if(s>e && flag==1){ 
+        if(s>e){ 
             return true; 
         }  
-        else if(s>e && flag==0){ 
-            return false;
-        } 
         else{ 
             if(str.charAt(s)==str.charAt(e)){ 
                 return check(str,++s,--e,1);
