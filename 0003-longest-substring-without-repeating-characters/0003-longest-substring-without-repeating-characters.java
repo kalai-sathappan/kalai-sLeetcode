@@ -17,7 +17,7 @@ class Solution {
                 left++;
             }
             set.add(s.charAt(right));
-            max = Math.max(max, right - left + 1);
+        max = Math.max(max, right-left+1); //set.size use right-lef for complexity
         }
 
         return max;
