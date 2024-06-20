@@ -9,16 +9,16 @@ class Solution {
         int a[]=new int[box.length()];
         for(int i=0;i<box.length();i++){  
             int sum = 0;
-            if(box.charAt(i)=='0'){ 
+            //if(box.charAt(i)=='0'){ 
                 for(int j:l){ 
                     sum += Math.abs(i-j);
                 }
-            } 
-            else{ 
-                for(int k:l){ 
-                    sum += Math.abs(i-k);
-                }
-            } 
+            //} 
+            //else{ 
+                //for(int k:l){ 
+                //    sum += Math.abs(i-k);
+              //  }
+            //} 
             a[i]=sum;
         } 
         return a;
