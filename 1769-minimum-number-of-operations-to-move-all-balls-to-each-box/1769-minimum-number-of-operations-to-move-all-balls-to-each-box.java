@@ -7,20 +7,16 @@ class Solution {
             }
         } 
         int a[]=new int[box.length()];
-        for(int i=0;i<box.length();i++){  
-            int sum = 0;
-            //if(box.charAt(i)=='0'){ 
-                for(int j:l){ 
-                    sum += Math.abs(i-j);
-                }
-            //} 
-            //else{ 
-                //for(int k:l){ 
-                //    sum += Math.abs(i-k);
-              //  }
-            //} 
-            a[i]=sum;
+        for(int i=0;i<box.length();i++){     
+            a[i]=add(i,l);
         } 
         return a;
+    } 
+    static int add(int i,List<Integer> l){  
+        int sum=0; 
+        for(int j:l){ 
+                  sum += Math.abs(i-(j));
+        }
+        return sum;
     }
 }
