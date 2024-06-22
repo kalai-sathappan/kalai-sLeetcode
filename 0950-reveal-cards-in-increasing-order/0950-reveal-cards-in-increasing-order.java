@@ -12,7 +12,7 @@ for (int i = 0; i < deck.length / 2; i++) {
         for(int i=0;i<deck.length;i++) 
         {  
             l.add(0,deck[i]); 
-            if(l.size()<=deck.length-1){  
+            if(l.size()<deck.length){  
                 int f = l.get(l.size()-1); 
                 l.remove(l.size()-1);
                 l.add(0,f);
