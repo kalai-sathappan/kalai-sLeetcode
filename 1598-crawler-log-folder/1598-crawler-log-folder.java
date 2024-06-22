@@ -3,7 +3,9 @@ class Solution {
         int c = 0;
 
         for(String s:logs){
-            
+            if(c<0){
+                c=0;
+            }
             if(s.contains("../")){ 
                 c--;
             }  
