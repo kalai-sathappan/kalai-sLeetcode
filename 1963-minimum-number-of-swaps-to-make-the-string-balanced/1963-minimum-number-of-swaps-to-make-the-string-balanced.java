@@ -22,6 +22,6 @@ class Solution {
         else if(st.size()==ans && ans==0){ 
             return ans;
         }   
-        return ans-1;
+        return (ans%2==0)?ans/2:(ans+1)/2;
     }
 }
