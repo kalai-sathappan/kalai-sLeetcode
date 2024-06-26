@@ -1,19 +1,18 @@
 class Solution {
     public int[] singleNumber(int[] nums) {
-        Set<Integer>s = new HashSet<>(); 
-        for(int i:nums){ 
-            if(s.contains(i)){ 
-                s.remove(i); 
-            } 
-            else{ 
-                s.add(i);
+        int xor = 0;
+        for (int num : nums) {
+            xor ^= num;
+        }
+        int rightmostSetBit = xor & -xor;
+        int num1 = 0, num2 = 0;
+        for (int num : nums) {
+            if ((num & rightmostSetBit) == 0) {
+                num1 ^= num;
+            } else {
+                num2 ^= num;
             }
-        } 
-        int a[] = new int[s.size()];  
-        int j=0;
-        for(int i:s){ 
-            a[j++]=i;
-        } 
-        return a;
+        }
+        return new int[]{num1, num2};
     }
 }
