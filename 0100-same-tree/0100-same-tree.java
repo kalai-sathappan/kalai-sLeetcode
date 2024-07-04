@@ -23,14 +23,14 @@ class Solution {
         return l1.equals(l2);
 
     }
-    static void inorder(TreeNode root,List<Integer> l){ 
+    static void preorder(TreeNode root,List<Integer> l){ 
         if(root == null){  
             l.add(null);
             return ;
         }  
          l.add(root.val);
-        inorder(root.left,l);
-        inorder(root.right,l); 
+        preorder(root.left,l);
+        preorder(root.right,l); 
     } 
 
 }
