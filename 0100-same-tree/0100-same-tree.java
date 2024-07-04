@@ -15,22 +15,22 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        return preorder(p).equals(preorder(q));
-    }
+        List<Integer> l1 = new ArrayList<>(); 
+        List<Integer> l2 = new ArrayList<>();  
+        inorder(p,l1);
+        inorder(q,l2);   
+        
+        return l1.equals(l2);
 
-    private List<Integer> preorder(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        preorderHelper(root, result);
-        return result;
     }
+    static void inorder(TreeNode root,List<Integer> l){ 
+        if(root == null){  
+            l.add(null);
+            return ;
+        }  
+         l.add(root.val);
+        inorder(root.left,l);
+        inorder(root.right,l); 
+    } 
 
-    private void preorderHelper(TreeNode root, List<Integer> result) {
-        if (root == null) {
-            result.add(null); // Using null to represent a null node
-            return;
-        }
-        result.add(root.val);
-        preorderHelper(root.left, result);
-        preorderHelper(root.right, result);
-    }
 }
